@@ -122,10 +122,10 @@ posts.forEach((element, index, array) => {
                                     <div class="post__footer">
                                         <div class="likes js-likes">
                                             <div class="likes__cta">
-                                                <a class="like-button  js-like-button" href="#" data-postid="${element.id}">
+                                                <button class="like-button  js-like-button" href="#" data-postid="${element.id}">
                                                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                                                     <span class="like-button__label">Mi Piace</span>
-                                                </a>
+                                                </button>
                                             </div>
                                             <div class="likes__counter">
                                                 Piace a <b id="like-counter-${element.id}" class="js-likes-counter">${element.likes}</b> persone
@@ -158,13 +158,13 @@ for (let i = 0; i < likeButton.length; i++) {
             likes.innerText = likesNumber - 1;
             const index = arrayLike.indexOf(postId);
             arrayLike.splice(index, 1);
-            bottoneLike[i].classList.remove("like-button--liked");
+            likeButton[i].classList.remove("like-button--liked");
             console.log(arrayLike);
         } else {
             likes.innerText = likesNumber + 1;
             arrayLike.push(postId);
             console.log(arrayLike);
-            bottoneLike[i].classList.add("like-button--liked");
+            likeButton[i].classList.add("like-button--liked");
         }
     });
 }
